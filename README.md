@@ -1,47 +1,50 @@
-# Simple Calculator
+# Simple Calculator (Round 2)
+
+MIT Licensed, zero-dependency web calculator supporting addition, subtraction, multiplication, and division with graceful divide-by-zero handling.
 
 ## Overview
-Simple Calculator is a clean, responsive, and accessible web-based calculator that supports basic arithmetic operations:
-- Addition, subtraction, multiplication, and division
-- Decimal numbers
-- Percentage
-- Sign toggle (±)
-- Backspace and All Clear (AC)
-- Keyboard input
+This is a lightweight, single-file web app that lets you:
+- Compute +, -, ×, ÷ between two numbers
+- See results instantly by clicking an operator or pressing Enter
+- Get friendly errors instead of Infinity when dividing by zero
 
-It is implemented as a single, portable HTML file with inline CSS/JS and works entirely offline.
+Accessibility highlights:
+- Clear labels and focus styles
+- aria-live regions for result updates and errors
+- Keyboard shortcuts (Enter to calculate, Esc to clear, and + - * / to switch operation)
+
+License: MIT (see below).
 
 ## Setup
-- No build tools or dependencies are required.
-- Download the repository contents (or copy the index.html file).
+- No build steps or dependencies required.
 - Open index.html in any modern web browser.
 
-That’s it.
+Optional:
+- Serve via a local server (e.g., npx serve .) for best file URL behavior.
 
 ## Usage
-- Click or tap the on-screen keys to enter numbers and operations.
-- Press = to calculate the result.
-- Supported operations:
-  - +, −, ×, ÷
-  - Percent (%) converts the current entry to a percentage. For addition/subtraction, it uses “percentage of the previous number” behavior.
-  - ± toggles the sign of the current entry.
-  - AC clears everything; ⌫ deletes the last digit.
-- Keyboard shortcuts:
-  - Digits: 0–9
-  - Decimal point: . (or ,)
-  - Operators: +, -, × (use *), ÷ (use /)
-  - Equals: Enter or =
-  - Backspace: ⌫
-  - Clear: Esc or Delete
-  - Percent: %
+1. Enter values in “Number A” and “Number B”.
+2. Choose an operation:
+   - Click an operator button (+, −, ×, ÷) to calculate immediately, or
+   - Press +, -, *, or / on your keyboard to select the operation.
+3. Press Enter or click “Calculate” to compute again using the last selected operation.
+4. Press Esc or click “Clear” to reset inputs.
+
+Divide-by-zero behavior:
+- If you attempt A ÷ 0, the calculator shows a clear error message and withholds a numeric result.
 
 Notes:
-- Division by zero yields “Error”. Start typing or press AC to continue.
-- Repeated equals (=) repeats the last operation with the last operand (e.g., 5 + 2 = = yields 7 then 9).
+- Inputs accept integers and decimals.
+- Results are lightly normalized to reduce floating-point artifacts.
 
-## License
-MIT License
+## Improvements in Round 2
+From the previous version, this release adds:
+- Multiplication (×) support
+- Division (÷) support
+- Graceful divide-by-zero handling with a clear error message
+- Minor UX polish: active operator highlighting, keyboard shortcuts, improved result formatting
 
+## MIT License
 Copyright (c) 2025 Simple Calculator Contributors
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
